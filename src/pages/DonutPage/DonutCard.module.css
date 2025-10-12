@@ -1,0 +1,15 @@
+.edit {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.date {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.calendarIcon {
+  margin-right: 8px;
+}
