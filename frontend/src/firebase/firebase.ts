@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { Firestore, getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDxgXYG_1TIEV9CieBtZcwpKFJpR5hcoO4",
-  authDomain: "cody-matchmaker.firebaseapp.com",
-  projectId: "cody-matchmaker",
-  storageBucket: "cody-matchmaker.firebasestorage.app",
-  messagingSenderId: "983435578576",
-  appId: "1:983435578576:web:ce56172b4153be679c62d5",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
