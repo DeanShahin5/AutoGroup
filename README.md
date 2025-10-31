@@ -2,6 +2,14 @@
 
 a full-stack group matching application for organizing members into groups and creating slack conversations.
 
+## structure
+
+```
+├── frontend/          react + typescript app
+├── backend/           node.js slack api functions
+└── docs/              documentation
+```
+
 ## tech stack
 
 **frontend**: react + typescript + vite + ant design + firebase
@@ -19,9 +27,14 @@ a full-stack group matching application for organizing members into groups and c
 ## setup
 
 ```bash
-npm install
+# install all dependencies
+npm run install-all
+
+# copy environment template
 cp .env.example .env
 # add your SLACK_BOT_TOKEN to .env
+
+# run development server
 npm run dev
 ```
 
@@ -33,5 +46,5 @@ npm run build
 
 ## deployment
 
-frontend → firebase hosting or vercel
-backend → firebase app hosting (cloud run)
+**frontend** → firebase hosting or vercel
+**backend** → firebase app hosting (cloud run)

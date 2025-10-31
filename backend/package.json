@@ -1,0 +1,10 @@
+{
+  "name": "autogroup-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "backend api for autogroup slack integration",
+  "dependencies": {
+    "@slack/web-api": "^7.9.0",
+    "firebase": "^11.1.0"
+  }
+}
