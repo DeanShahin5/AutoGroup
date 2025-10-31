@@ -1,10 +1,28 @@
+/**
+ * Slack Group Creation API
+ *
+ * Creates multiple Slack group conversations in batches with automatic retry logic.
+ * Handles rate limiting and network errors gracefully.
+ *
+ * Features:
+ * - Batch processing (5 groups at a time)
+ * - Automatic retry with exponential backoff (3 retries)
+ * - Error handling and logging
+ */
+
 import { WebClient } from "@slack/web-api";
 
 const token = process.env.SLACK_BOT_TOKEN;
 const web = new WebClient(token);
 
+// Utility function for adding delays between operations
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+/**
+ * Handles POST requests to create Slack group conversations
+ * @param {Object} req - Request object with groups array and message in body
+ * @param {Object} res - Response object
+ */
 export default async function handler(req, res) {
   if (req.body.groups.length === 0) {
     return res.status(200).json({ ok: true, createdGroups: [] });

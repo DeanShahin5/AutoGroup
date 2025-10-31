@@ -1,9 +1,21 @@
+/**
+ * Slack Message API
+ *
+ * Sends messages to a specified Slack channel.
+ * Deployed as a serverless function on Firebase App Hosting.
+ */
+
 import { WebClient } from "@slack/web-api";
 
 // Use environment variable for Slack bot token
 const token = process.env.SLACK_BOT_TOKEN;
 const web = new WebClient(token);
 
+/**
+ * Handles POST requests to send messages to Slack
+ * @param {Object} req - Request object with message in body
+ * @param {Object} res - Response object
+ */
 export default async function handler(req, res) {
   if (req.method === "POST") {
     // Get the message from the request body
